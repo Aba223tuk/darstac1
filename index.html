@@ -526,7 +526,25 @@
 
 
 
-        /* Testimonials */
+        /* Pricing */
+        .pricing__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; align-items: start; }
+        .pricing-card { position: relative; padding: 2rem; background: var(--color-bg-elevated); border: 1px solid var(--color-border); border-radius: var(--radius-lg); transition: all var(--transition); }
+        .pricing-card:hover { transform: translateY(-6px); border-color: var(--color-border-hover); box-shadow: 0 20px 40px rgba(99, 102, 241, 0.12); }
+        .pricing-card--featured { background: linear-gradient(145deg, var(--color-bg-elevated) 0%, rgba(99, 102, 241, 0.08) 100%); border-color: var(--color-accent); transform: scale(1.03); }
+        .pricing-card--featured:hover { transform: scale(1.03) translateY(-6px); }
+        .pricing-card__badge { display: inline-block; padding: 0.35rem 0.75rem; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; background: var(--gradient-primary); color: white; border-radius: var(--radius-sm); margin-bottom: 1.25rem; }
+        .pricing-card__title { font-family: var(--font-display); font-size: 1.5rem; font-weight: 600; color: var(--color-text); margin-bottom: 0.75rem; }
+        .pricing-card__price { margin-bottom: 1.25rem; }
+        .pricing-card__price .price { font-family: var(--font-display); font-size: 2.5rem; font-weight: 700; background: var(--gradient-text); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+        .pricing-card__price .period { font-size: 0.95rem; color: var(--color-text-muted); }
+        .pricing-card__description { color: var(--color-text-muted); line-height: 1.6; margin-bottom: 1.5rem; }
+        .pricing-card__list { list-style: none; padding: 0; margin: 0 0 2rem 0; }
+        .pricing-card__list li { position: relative; padding-left: 1.5rem; margin-bottom: 0.75rem; color: var(--color-text); font-size: 0.95rem; }
+        .pricing-card__list li::before { content: '✓'; position: absolute; left: 0; color: var(--color-success); font-weight: 700; }
+        .pricing-card__cta { width: 100%; text-align: center; }
+        @media (max-width: 968px) { .pricing__grid { grid-template-columns: 1fr; } .pricing-card--featured { transform: none; } .pricing-card--featured:hover { transform: translateY(-6px); } }
+
+                /* Testimonials */
 
         .testimonials { background: var(--color-bg-soft); border-top: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border); }
 
@@ -681,6 +699,7 @@
                 <li class="nav__item"><a href="#services" class="nav__link">Services</a></li>
 
                 <li class="nav__item"><a href="#portfolio" class="nav__link">Portfolio</a></li>
+                <li class="nav__item"><a href="#pricing" class="nav__link">Pricing</a></li>
 
                 <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
 
@@ -1242,7 +1261,73 @@
 
 
 
-        <section class="about section" id="about">
+                </section>
+
+        <!-- Pricing Section -->
+        <section class="pricing section" id="pricing">
+            <div class="container">
+                <div class="section__header">
+                    <span class="section__subtitle reveal">Transparent pricing</span>
+                    <h2 class="section__title reveal" data-delay="100">Simple plans. <span class="gradient-text">Serious results.</span></h2>
+                    <p class="section__description reveal" data-delay="200">Start with a free demo template built for your business. If you like it, we'll turn it into your real site.</p>
+                </div>
+
+                <div class="pricing__grid">
+                    <article class="pricing-card reveal" data-delay="0">
+                        <div class="pricing-card__badge">Free demo</div>
+                        <h3 class="pricing-card__title">Demo Template</h3>
+                        <div class="pricing-card__price"><span class="price">$0</span><span class="period"> / no obligation</span></div>
+                        <p class="pricing-card__description">We build a working mockup of your site using your branding, photos, and content. You see exactly what you're getting before paying anything.</p>
+                        
+                        <ul class="pricing-card__list">
+                            <li>1-page custom demo</li>
+                            <li>Your logo, colors &amp; content</li>
+                            <li>Mobile-first design preview</li>
+                            <li>No payment, no commitment</li>
+                        </ul>
+                        
+                        <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=darstac1%40gmail.com&amp;su=Free+Demo+Request+-+Darstac" class="btn btn--secondary pricing-card__cta" target="_blank" rel="noopener noreferrer">Get Your Free Demo</a>
+                    </article>
+
+                    <article class="pricing-card pricing-card--featured reveal" data-delay="100">
+                        <div class="pricing-card__badge">Most popular</div>
+                        <h3 class="pricing-card__title">Business Site</h3>
+                        <div class="pricing-card__price"><span class="price">$500–$1,000</span><span class="period"> / one-time</span></div>
+                        
+                        <p class="pricing-card__description">A complete, conversion-focused website for local businesses. Most projects land between $500 and $1,000 depending on pages and features.</p>
+                        
+                        <ul class="pricing-card__list">
+                            <li>Up to 5 custom pages</li>
+                            <li>Mobile &amp; speed optimized</li>
+                            <li>On-page SEO setup</li>
+                            <li>Contact forms &amp; Google Maps</li>
+                            <li>2 rounds of revisions</li>
+                        </ul>
+                        
+                        <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=darstac1%40gmail.com&amp;su=Business+Site+Inquiry+-+Darstac" class="btn btn--primary pricing-card__cta" target="_blank" rel="noopener noreferrer">Start a Project</a>
+                    </article>
+
+                    <article class="pricing-card reveal" data-delay="200">
+                        <div class="pricing-card__badge">Full package</div>
+                        <h3 class="pricing-card__title">Growth + Care</h3>
+                        <div class="pricing-card__price"><span class="price">$1,000–$2,000</span><span class="period"> + $99/mo</span></div>
+                        
+                        <p class="pricing-card__description">Everything in Business Site plus ongoing updates, hosting, and local SEO so your site keeps working.</p>
+                        
+                        <ul class="pricing-card__list">
+                            <li>Everything in Business Site</li>
+                            <li>Hosting, backups &amp; updates</li>
+                            <li>Local SEO &amp; listings optimization</li>
+                            <li>Monthly performance report</li>
+                            <li>Priority support</li>
+                        </ul>
+                        
+                        <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=darstac1%40gmail.com&amp;su=Growth+%2B+Care+Inquiry+-+Darstac" class="btn btn--secondary pricing-card__cta" target="_blank" rel="noopener noreferrer">Get Growth + Care</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+<section class="about section" id="about">
 
             <div class="container">
 
