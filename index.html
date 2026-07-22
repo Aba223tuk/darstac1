@@ -602,6 +602,8 @@
         .pricing-card__list li::before { content: '✓'; position: absolute; left: 0; color: var(--color-success); font-weight: 700; }
         .pricing-card__cta { width: 100%; text-align: center; }
         @media (max-width: 968px) { .pricing__grid { grid-template-columns: 1fr; } .pricing-card--featured { transform: none; } .pricing-card--featured:hover { transform: translateY(-6px); } }
+        .care-head { text-align: center; max-width: 640px; margin: 4.5rem auto 2.5rem; }
+        .care-head__title { font-family: var(--font-display); font-size: clamp(1.5rem, 3vw, 2.2rem); font-weight: 600; letter-spacing: -0.02em; margin-bottom: 1rem; }
 
                 /* Testimonials */
 
@@ -1422,20 +1424,71 @@
 
                     <article class="pricing-card reveal" data-delay="200">
                         <div class="pricing-card__badge">Full package</div>
-                        <h3 class="pricing-card__title">Growth + Care</h3>
-                        <div class="pricing-card__price"><span class="price">$1,000–$2,000</span><span class="period"> + $99/mo</span></div>
-                        
-                        <p class="pricing-card__description">Everything in Business Site plus ongoing updates, hosting, and local SEO so your site keeps working.</p>
-                        
+                        <h3 class="pricing-card__title">Build + Care</h3>
+                        <div class="pricing-card__price"><span class="price">$1,000–$2,000</span><span class="period"> one-time</span></div>
+
+                        <p class="pricing-card__description">A bigger build — more pages, more features — with your first month of Standard care included free, so it launches handled.</p>
+
                         <ul class="pricing-card__list">
                             <li>Everything in Business Site</li>
-                            <li>Hosting, backups &amp; updates</li>
+                            <li>Up to 10 pages &amp; extra features</li>
+                            <li>First month of Standard care free</li>
                             <li>Local SEO &amp; listings optimization</li>
-                            <li>Monthly performance report</li>
                             <li>Priority support</li>
                         </ul>
-                        
-                        <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=darstac1%40gmail.com&amp;su=Growth+%2B+Care+Inquiry+-+Darstac" class="btn btn--secondary pricing-card__cta" target="_blank" rel="noopener noreferrer">Get Growth + Care</a>
+
+                        <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=darstac1%40gmail.com&amp;su=Build+%2B+Care+Inquiry+-+Darstac" class="btn btn--secondary pricing-card__cta" target="_blank" rel="noopener noreferrer">Get Build + Care</a>
+                    </article>
+                </div>
+
+                <!-- Care plans -->
+                <div class="care-head">
+                    <span class="section__subtitle reveal">Website care plans</span>
+                    <h3 class="care-head__title reveal" data-delay="100">Already have a site? <span class="gradient-text">We keep it handled.</span></h3>
+                    <p class="section__description reveal" data-delay="200">Flat monthly price, no contracts, cancel anytime. Your site stays fast, current, and bringing in calls while you run the business.</p>
+                </div>
+
+                <div class="pricing__grid">
+                    <article class="pricing-card reveal" data-delay="0">
+                        <h3 class="pricing-card__title">Essentials</h3>
+                        <div class="pricing-card__price"><span class="price">$150</span><span class="period"> / month</span></div>
+                        <p class="pricing-card__description">Keep the lights on — hosting, security, and small updates, all off your plate.</p>
+                        <ul class="pricing-card__list">
+                            <li>Hosting, domain &amp; SSL handled</li>
+                            <li>Security updates &amp; daily backups</li>
+                            <li>24/7 uptime monitoring</li>
+                            <li>2 content updates a month</li>
+                        </ul>
+                        <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=darstac1%40gmail.com&amp;su=Essentials+Care+Plan+-+Darstac" class="btn btn--secondary pricing-card__cta" target="_blank" rel="noopener noreferrer">Start Essentials</a>
+                    </article>
+
+                    <article class="pricing-card pricing-card--featured reveal" data-delay="100">
+                        <div class="pricing-card__badge">Most popular</div>
+                        <h3 class="pricing-card__title">Standard Care</h3>
+                        <div class="pricing-card__price"><span class="price">$300</span><span class="period"> / month</span></div>
+                        <p class="pricing-card__description">What our restaurant clients run — unlimited small updates and your Google presence managed.</p>
+                        <ul class="pricing-card__list">
+                            <li>Everything in Essentials</li>
+                            <li>Unlimited small updates</li>
+                            <li>Google Business profile managed</li>
+                            <li>Same-week turnaround</li>
+                            <li>Monthly health &amp; performance check</li>
+                        </ul>
+                        <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=darstac1%40gmail.com&amp;su=Standard+Care+Plan+-+Darstac" class="btn btn--primary pricing-card__cta" target="_blank" rel="noopener noreferrer">Start Standard Care</a>
+                    </article>
+
+                    <article class="pricing-card reveal" data-delay="200">
+                        <h3 class="pricing-card__title">Growth Care</h3>
+                        <div class="pricing-card__price"><span class="price">$500</span><span class="period"> / month</span></div>
+                        <p class="pricing-card__description">More calls, more customers — we actively grow your local visibility every month.</p>
+                        <ul class="pricing-card__list">
+                            <li>Everything in Standard</li>
+                            <li>Local SEO — show up in searches</li>
+                            <li>Review management &amp; responses</li>
+                            <li>Seasonal promos &amp; landing pages</li>
+                            <li>Monthly report + strategy call</li>
+                        </ul>
+                        <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=darstac1%40gmail.com&amp;su=Growth+Care+Plan+-+Darstac" class="btn btn--secondary pricing-card__cta" target="_blank" rel="noopener noreferrer">Start Growth Care</a>
                     </article>
                 </div>
             </div>
