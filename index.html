@@ -35,6 +35,7 @@
         "name": "Darstac",
         "url": "https://darstac.com/",
         "email": "darstac1@gmail.com",
+        "telephone": "+1-929-670-9555",
         "description": "Web design and development studio building high-performance websites for local businesses — custom builds, maintenance, SEO, and ongoing care plans.",
         "priceRange": "$500-$2,000",
         "sameAs": ["https://github.com/aba223tuk"]
@@ -308,6 +309,8 @@
         @keyframes scrollLine { 0% { transform: translateY(-100%); } 100% { transform: translateY(200%); } }
 
         @media (max-width: 768px) { .hero { padding: 6rem 0 3rem; } .hero__scroll { display: none; } .hero__stats { gap: 1.5rem; } .stat__value { font-size: 1.75rem; } .hero__orb { display: none; } }
+
+        @media (max-height: 860px) { .hero__scroll { display: none; } }
 
 
 
@@ -612,6 +615,28 @@
 
 
 
+        /* FAQ */
+
+        .faq__list { max-width: 760px; margin: 0 auto; display: flex; flex-direction: column; gap: 1rem; }
+
+        .faq__item { background: var(--color-bg-soft); border: 1px solid var(--color-border); border-radius: var(--radius-md); overflow: hidden; transition: border-color var(--transition); }
+
+        .faq__item:hover, .faq__item[open] { border-color: var(--color-border-hover); }
+
+        .faq__item[open] { background: var(--color-bg-elevated); }
+
+        .faq__question { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1.25rem 1.5rem; cursor: pointer; font-family: var(--font-display); font-size: 1.0625rem; font-weight: 600; list-style: none; }
+
+        .faq__question::-webkit-details-marker { display: none; }
+
+        .faq__question::after { content: '+'; font-size: 1.5rem; font-weight: 400; color: var(--color-accent-3); transition: transform var(--transition); flex-shrink: 0; line-height: 1; }
+
+        .faq__item[open] .faq__question::after { transform: rotate(45deg); }
+
+        .faq__answer { padding: 0 1.5rem 1.25rem; color: var(--color-text-muted); line-height: 1.7; font-size: 0.95rem; }
+
+
+
         /* Contact */
 
         .contact__wrapper { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
@@ -849,17 +874,17 @@
 
                     <div class="stat">
 
-                        <span class="stat__value" data-target="100" data-suffix="%">100%</span>
+                        <span class="stat__value" data-target="24" data-suffix="h">24h</span>
 
-                        <span class="stat__label">Client Satisfaction</span>
+                        <span class="stat__label">Response Time</span>
 
                     </div>
 
                     <div class="stat">
 
-                        <span class="stat__value" data-target="5" data-suffix="★">5★</span>
+                        <span class="stat__value" data-target="0" data-prefix="$" data-suffix="">$0</span>
 
-                        <span class="stat__label">Average Rating</span>
+                        <span class="stat__label">Demo Before You Pay</span>
 
                     </div>
 
@@ -1572,6 +1597,68 @@
 
 
 
+        <section class="faq section" id="faq">
+
+            <div class="container">
+
+                <div class="section__header">
+
+                    <span class="section__subtitle reveal">Common questions</span>
+
+                    <h2 class="section__title reveal" data-delay="100">Frequently asked <span class="gradient-text">questions</span></h2>
+
+                </div>
+
+                <div class="faq__list">
+
+                    <details class="faq__item reveal" data-delay="0">
+
+                        <summary class="faq__question">How does the free demo work?</summary>
+
+                        <p class="faq__answer">Tell us about your business and we build a working one-page mockup with your branding, photos, and content — before you pay anything. If you like it, we turn it into your full site. If not, no charge and no hard feelings.</p>
+
+                    </details>
+
+                    <details class="faq__item reveal" data-delay="100">
+
+                        <summary class="faq__question">How long does a website take?</summary>
+
+                        <p class="faq__answer">A typical business site takes 1–2 weeks from kickoff to launch. The free demo usually arrives within a few days. Larger builds with extra pages or features can take up to 3–4 weeks.</p>
+
+                    </details>
+
+                    <details class="faq__item reveal" data-delay="200">
+
+                        <summary class="faq__question">Do I own my website?</summary>
+
+                        <p class="faq__answer">Yes. Once your project is paid for, the site and its content are yours. If you're on a care plan we handle hosting and updates for you, but you can take your site elsewhere at any time — no lock-in.</p>
+
+                    </details>
+
+                    <details class="faq__item reveal" data-delay="300">
+
+                        <summary class="faq__question">What if I need changes after launch?</summary>
+
+                        <p class="faq__answer">Small fixes shortly after launch are on us. For ongoing updates — new menu items, photos, seasonal promos — our care plans start at $150/month, or we can quote one-off changes as they come up.</p>
+
+                    </details>
+
+                    <details class="faq__item reveal" data-delay="400">
+
+                        <summary class="faq__question">Do you handle hosting and the domain?</summary>
+
+                        <p class="faq__answer">We can. Care plans include hosting, domain, and SSL fully managed. If you already have hosting or a domain, we'll work with what you have.</p>
+
+                    </details>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
         <section class="contact section" id="contact">
 
             <div class="container">
@@ -1587,6 +1674,14 @@
                         <p class="contact__text reveal" data-delay="200">Tell us about your project and we'll get back to you within 24 hours. Whether it's a brand new website, a redesign, or ongoing maintenance — we'd love to help.</p>
 
                         <div class="contact__details reveal" data-delay="300">
+
+                            <a href="tel:+19296709555" class="contact__detail">
+
+                                <span class="contact__detail-icon">📞</span>
+
+                                <span>(929) 670-9555</span>
+
+                            </a>
 
                             <a href="https://mail.google.com/mail/?view=cm&fs=1&to=darstac1%40gmail.com&su=Project+Inquiry" class="contact__detail">
 
@@ -1616,21 +1711,81 @@
 
                     </div>
 
-                    <div class="contact__cta reveal" data-delay="400">
+                    <form class="contact__form reveal" data-delay="400" action="https://formsubmit.co/darstac1@gmail.com" method="POST">
 
-                        <p class="contact__cta-text">Click below to send us a project inquiry. We'll reply within 24 hours with next steps.</p>
+                        <input type="hidden" name="_subject" value="New project inquiry — darstac.com">
 
-                        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=darstac1%40gmail.com&su=Project+Inquiry+-+Darstac&body=Hi%20Darstac%2C%0A%0AI%27d%20like%20to%20discuss%20a%20project.%0A%0ABusiness%20name%3A%0AProject%20type%3A%0ATimeline%3A%0ABudget%20range%3A%0A%0AAdditional%20details%3A" class="btn btn--primary btn--full">
+                        <input type="hidden" name="_template" value="table">
 
-                            <span>Email Us</span>
+                        <input type="hidden" name="_captcha" value="false">
+
+                        <input type="hidden" name="_next" value="https://darstac.com/thanks.html">
+
+                        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+                        <div class="form-group">
+
+                            <label class="form-label" for="cf-name">Name</label>
+
+                            <input class="form-input" type="text" id="cf-name" name="name" required autocomplete="name">
+
+                        </div>
+
+                        <div class="form-group">
+
+                            <label class="form-label" for="cf-business">Business name</label>
+
+                            <input class="form-input" type="text" id="cf-business" name="business" autocomplete="organization">
+
+                        </div>
+
+                        <div class="form-group">
+
+                            <label class="form-label" for="cf-email">Email</label>
+
+                            <input class="form-input" type="email" id="cf-email" name="email" required autocomplete="email">
+
+                        </div>
+
+                        <div class="form-group">
+
+                            <label class="form-label" for="cf-type">What do you need?</label>
+
+                            <select class="form-input form-select" id="cf-type" name="project_type">
+
+                                <option>Free demo template</option>
+
+                                <option>New website</option>
+
+                                <option>Redesign an existing site</option>
+
+                                <option>Website care / maintenance</option>
+
+                                <option>Something else</option>
+
+                            </select>
+
+                        </div>
+
+                        <div class="form-group">
+
+                            <label class="form-label" for="cf-message">Tell us a bit about it</label>
+
+                            <textarea class="form-input form-textarea" id="cf-message" name="message" required></textarea>
+
+                        </div>
+
+                        <button type="submit" class="btn btn--primary btn--full">
+
+                            <span>Send Inquiry</span>
 
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
 
-                        </a>
+                        </button>
 
-                        <p class="contact__email">darstac1@gmail.com</p>
+                        <p class="contact__email">Prefer to talk? <a href="tel:+19296709555">(929) 670-9555</a> · darstac1@gmail.com</p>
 
-                    </div>
+                    </form>
 
                 </div>
 
@@ -1700,7 +1855,9 @@
 
                         <li><a href="#portfolio">Portfolio</a></li>
 
-                        <li><a href="https://mail.google.com/mail/?view=cm&fs=1&to=darstac1%40gmail.com">Contact</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+
+                        <li><a href="#contact">Contact</a></li>
 
                     </ul>
 
@@ -1711,6 +1868,8 @@
                     <h4 class="footer__heading">Connect</h4>
 
                     <ul class="footer__list">
+
+                        <li><a href="tel:+19296709555">(929) 670-9555</a></li>
 
                         <li><a href="https://mail.google.com/mail/?view=cm&fs=1&to=darstac1%40gmail.com">Email</a></li>
 
@@ -1970,9 +2129,11 @@
 
                     const target = c.dataset.target || '0';
 
+                    const prefix = c.dataset.prefix || '';
+
                     const suffix = c.dataset.suffix || '';
 
-                    c.textContent = target + suffix;
+                    c.textContent = prefix + target + suffix;
 
                 });
 
@@ -1986,6 +2147,8 @@
 
                 const target = parseInt(el.dataset.target, 10);
 
+                const prefix = el.dataset.prefix || '';
+
                 const suffix = el.dataset.suffix || '';
 
                 const duration = 1800;
@@ -1998,7 +2161,7 @@
 
                     const eased = 1 - Math.pow(1 - progress, 3);
 
-                    el.textContent = Math.floor(target * eased) + suffix;
+                    el.textContent = prefix + Math.floor(target * eased) + suffix;
 
                     if (progress < 1) {
 
@@ -2006,7 +2169,7 @@
 
                     } else {
 
-                        el.textContent = target + suffix;
+                        el.textContent = prefix + target + suffix;
 
                     }
 
