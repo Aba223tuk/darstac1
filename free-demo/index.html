@@ -30,9 +30,12 @@
     <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=2111917956205326&ev=PageView&noscript=1"></noscript>
 
     <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png">
+    <link rel="preconnect" href="https://connect.facebook.net">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <!-- Fonts load async so first paint never waits on them; system stack renders immediately -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet"></noscript>
 
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -115,7 +118,7 @@
             width: 100%; padding: 0.8rem 0.95rem; margin-bottom: 1.1rem;
             background: var(--bg); color: var(--text);
             border: 1px solid var(--border); border-radius: 10px;
-            font: inherit; font-size: 0.95rem;
+            font: inherit; font-size: 1rem; /* ≥16px so iOS Safari doesn't zoom on focus */
         }
         input::placeholder { color: #6b7280; }
         input:focus, select:focus { outline: none; border-color: var(--accent); }
@@ -185,12 +188,28 @@
                     <select id="type" name="business_type" required>
                         <option value="" disabled selected>Choose one…</option>
                         <option>Restaurant / Café</option>
-                        <option>Salon / Barbershop</option>
-                        <option>Contractor / Trades</option>
+                        <option>Salon / Barbershop / Spa</option>
+                        <option>Construction / Remodeling</option>
+                        <option>HVAC / Plumbing / Electrical</option>
+                        <option>Roofing / Siding</option>
+                        <option>Landscaping / Lawn Care</option>
+                        <option>Contractor / Other Trades</option>
+                        <option>Cleaning / Home Services</option>
+                        <option>Auto / Repair Shop</option>
                         <option>Retail / Shop</option>
                         <option>Health / Fitness</option>
+                        <option>Medical / Dental</option>
+                        <option>Pet Care / Grooming</option>
+                        <option>Legal / Accounting / Professional</option>
+                        <option>Events / Photography</option>
+                        <option>Real Estate</option>
                         <option>Other</option>
                     </select>
+
+                    <div id="type-other-wrap" hidden>
+                        <label for="type-other">Tell us what you do</label>
+                        <input id="type-other" name="business_type_other" type="text" placeholder="e.g. Tattoo studio, daycare, food truck…">
+                    </div>
 
                     <label for="contact">Phone or email</label>
                     <input id="contact" name="contact" type="text" required placeholder="(555) 123-4567 or you@email.com">
@@ -201,5 +220,18 @@
             </section>
         </div>
     </div>
+    <script>
+    (function () {
+        var sel = document.getElementById('type'),
+            wrap = document.getElementById('type-other-wrap'),
+            input = document.getElementById('type-other');
+        sel.addEventListener('change', function () {
+            var other = sel.value === 'Other';
+            wrap.hidden = !other;
+            input.required = other;
+            if (other) input.focus();
+        });
+    })();
+    </script>
 </body>
 </html>
